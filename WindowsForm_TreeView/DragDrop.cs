@@ -25,9 +25,9 @@ namespace WindowsForm_TreeView
 
             List<string> path = new List<string>();
             foreach (string file in (string[])e.Data.GetData(DataFormats.FileDrop))
-                //File.Delete(file); //if at we want to delete our drag file 
-                //  richTextBox1.Text += file + "\n"; //Added to our treeView
-                //We try to check inside our file if we drag and drop folder and first check if such file exist 
+                //File.Delete(file); //if at a point  we want to delete our drag file 
+                //  richTextBox1.Text += file + "\n"; //Added file to our treeView
+                //Next we try to check inside our file folder if the drag and drop folder contain internal file and if at all such file exist 
                 if (Directory.Exists(file))
                     path.AddRange(Directory.GetFiles(file, ".", SearchOption.AllDirectories));                 
                 else
